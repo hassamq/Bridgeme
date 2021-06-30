@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dashboard | Bridge Me</title>
+
+  <style>
+    hr {
+      margin: 4em 0!important
+    }
+
+    h2 {
+      font-weight: bold!important;
+      font-size: 32px!important;
+      margin-bottom: 20px!important;
+    }
+
+    .form-control {
+      margin-bottom: 10px;
+    }
+
+    .col-md-3, .col-md-4 {
+      margin: 20px 0!important
+    }
+
+    .default-value {
+      font-size: 12px;
+      font-weight: bold;
+    }
+  </style>
+
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/admin">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/contacts">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/contents/index">Contents</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container mt-5">
+
+    <form action="/admin/contents/cover/<%= contents._id %>" method="POST">
+      <h2>Cover</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.header.title %>" name="title" id="title" placeholder="Cover title" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.header.text %>" name="text" id="text" placeholder="Cover text" />
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.header.link %>" name="link" id="link" placeholder="Cover link" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.header.linkText %>" name="linkText" id="linkText" placeholder="Cover link text" />
+        </div>
+
+        <div class="col-md-12">
+          <span class="d-block default-value">Default Value: /media/cover.svg</span>
+          <input type="text" class="form-control" value="<%= contents.header.imageCover %>" name="imageCover" id="imageCover" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+    <hr>
+
+    <form action="/admin/contents/why-bridge/<%= contents._id %>" method="POST">
+      <h2>Why Bridge</h2>
+
+      <div class="row">
+        <div class="col-md-12">
+          <input type="text" class="form-control" value="<%= contents.whyBridge.titleWhyBridge %>" name="titleWhyBridge" id="titleWhyBridge" placeholder="Cover title" />
+        </div>
+
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/idea.png</span>
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card1.image %>" name="card1.image" id="card1.image" placeholder="Card 1 image" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card1.title %>" name="card1.title" id="card1.title" placeholder="Card 1 title" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card1.text %>" name="card1.text" id="card1.text" placeholder="Card 1 text" />
+        </div>
+
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/user.png</span>
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card2.image %>" name="card2.image" id="card2.image" placeholder="Card 2 image" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card2.title %>" name="card2.title" id="card2.title" placeholder="Card 2 title" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card2.text %>" name="card2.text" id="card2.text" placeholder="Card 2 text" />
+        </div>
+
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/lock.png</span>
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card3.image %>" name="card3.image" id="card3.image" placeholder="Card 3 image" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card3.title %>" name="card3.title" id="card3.title" placeholder="Card 3 title" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card3.text %>" name="card3.text" id="card3.text" placeholder="Card 3 text" />
+        </div>
+
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/plane.png</span>
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card4.image %>" name="card4.image" id="card4.image" placeholder="Card 4 image" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card4.title %>" name="card4.title" id="card4.title" placeholder="Card 4 title" />
+          <input type="text" class="form-control" value="<%= contents.whyBridge.card4.text %>" name="card4.text" id="card4.text" placeholder="Card 4 text" />
+        </div>
+
+        <div class="col-md-12">
+          <span class="d-block default-value">Default Value: /media/section-1.jpg</span>
+          <input type="text" class="form-control" value="<%= contents.whyBridge.imageWhyBridge %>" name="imageWhyBridge" id="imageWhyBridge" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+    <hr>
+
+    <form action="/admin/contents/features/<%= contents._id %>" method="POST">
+      <h2>Features</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.features.titleFeatures %>" name="titleFeatures" id="titleFeatures"
+            placeholder="Features title" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.features.textFeatures %>" name="textFeatures" id="textFeatures" placeholder="Features text" />
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.features.linkFeatures %>" name="linkFeatures" id="linkFeatures" placeholder="Features link" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.features.linkTextFeatures %>" name="linkTextFeatures" id="linkTextFeatures"
+            placeholder="Features link text" />
+        </div>
+
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/cards/card-1.svg</span>
+          <input type="text" class="form-control" value="<%= contents.features.feature1.image %>" name="feature1.image" id="feature1.image" placeholder="Features Card 1 image" />
+          <input type="text" class="form-control" value="<%= contents.features.feature1.title %>" name="feature1.title" id="feature1.title" placeholder="Features Card 1 title" />
+          <input type="text" class="form-control" value="<%= contents.features.feature1.text %>" name="feature1.text" id="feature1.text"
+            placeholder="Features Card 1 text" />
+        </div>
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/cards/card-2.svg</span>
+          <input type="text" class="form-control" value="<%= contents.features.feature2.image %>" name="feature2.image" id="feature2.image" placeholder="Features Card 2 image" />
+          <input type="text" class="form-control" value="<%= contents.features.feature2.title %>" name="feature2.title" id="feature2.title" placeholder="Features Card 2 title" />
+          <input type="text" class="form-control" value="<%= contents.features.feature2.text %>" name="feature2.text" id="feature2.text"
+            placeholder="Features Card 2 text" />
+        </div>
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/cards/card-3.svg</span>
+          <input type="text" class="form-control" value="<%= contents.features.feature3.image %>" name="feature3.image" id="feature3.image" placeholder="Features Card 3 image" />
+          <input type="text" class="form-control" value="<%= contents.features.feature3.title %>" name="feature3.title" id="feature3.title" placeholder="Features Card 3 title" />
+          <input type="text" class="form-control" value="<%= contents.features.feature3.text %>" name="feature3.text" id="feature3.text"
+            placeholder="Features Card 3 text" />
+        </div>
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/cards/card-4.svg</span>
+          <input type="text" class="form-control" value="<%= contents.features.feature4.image %>" name="feature4.image" id="feature4.image" placeholder="Features Card 4 image" />
+          <input type="text" class="form-control" value="<%= contents.features.feature4.title %>" name="feature4.title" id="feature4.title" placeholder="Features Card 4 title" />
+          <input type="text" class="form-control" value="<%= contents.features.feature4.text %>" name="feature4.text" id="feature4.text"
+            placeholder="Features Card 4 text" />
+        </div>
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/cards/card-5.svg</span>
+          <input type="text" class="form-control" value="<%= contents.features.feature5.image %>" name="feature5.image" id="feature5.image" placeholder="Features Card 5 image" />
+          <input type="text" class="form-control" value="<%= contents.features.feature5.title %>" name="feature5.title" id="feature5.title" placeholder="Features Card 5 title" />
+          <input type="text" class="form-control" value="<%= contents.features.feature5.text %>" name="feature5.text" id="feature5.text"
+            placeholder="Features Card 5 text" />
+        </div>
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/cards/card-6.svg</span>
+          <input type="text" class="form-control" value="<%= contents.features.feature6.image %>" name="feature6.image" id="feature6.image" placeholder="Features Card 6 image" />
+          <input type="text" class="form-control" value="<%= contents.features.feature6.title %>" name="feature6.title" id="feature6.title" placeholder="Features Card 6 title" />
+          <input type="text" class="form-control" value="<%= contents.features.feature6.text %>" name="feature6.text" id="feature6.text"
+            placeholder="Features Card 6 text" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+    <hr>
+
+    <form action="/admin/contents/howork/<%= contents._id %>" method="POST">
+      <h2>How It Works</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.howork.titleHowWork %>" name="titleHowWork" id="titleHowWork"
+            placeholder="How Bridge Work title" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.howork.textHowWork %>" name="textHowWork" id="textHowWork"
+            placeholder="How Bridge Work text" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.howork.linkHowWork %>" name="linkHowWork" id="linkHowWork"
+            placeholder="How Bridge Work link" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.howork.linkTextHowWork %>" name="linkTextHowWork" id="linkTextHowWork"
+            placeholder="How Bridge Work link text" />
+        </div>
+
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/student.png</span>
+          <input type="text" class="form-control" value="<%= contents.howork.howWork1.image %>" name="howWork1.image" id="howWork1.image" placeholder="HBW Card 1 image" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork1.title %>" name="howWork1.title" id="howWork1.title" placeholder="HBW Card 1 title" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork1.text %>" name="howWork1.text" id="howWork1.text"
+            placeholder="HBW Card 1 text" />
+        </div>
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/robot.svg</span>
+          <input type="text" class="form-control" value="<%= contents.howork.howWork2.image %>" name="howWork2.image" id="howWork2.image" placeholder="HBW Card 2 image" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork2.title %>" name="howWork2.title" id="howWork2.title" placeholder="HBW Card 2 title" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork2.text %>" name="howWork2.text" id="howWork2.text"
+            placeholder="HBW Card 2 text" />
+        </div>
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/communication.svg</span>
+          <input type="text" class="form-control" value="<%= contents.howork.howWork3.image %>" name="howWork3.image" id="howWork3.image" placeholder="HBW Card 3 image" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork3.title %>" name="howWork3.title" id="howWork3.title" placeholder="HBW Card 3 title" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork3.text %>" name="howWork3.text" id="howWork3.text"
+            placeholder="HBW Card 3 text" />
+        </div>
+        <div class="col-md-3">
+          <span class="d-block default-value">Default Value: /media/icons/dancing.svg</span>
+          <input type="text" class="form-control" value="<%= contents.howork.howWork4.image %>" name="howWork4.image" id="howWork4.image" placeholder="HBW Card 4 image" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork4.title %>" name="howWork4.title" id="howWork4.title" placeholder="HBW Card 4 title" />
+          <input type="text" class="form-control" value="<%= contents.howork.howWork4.text %>" name="howWork4.text" id="howWork4.text"
+            placeholder="HBW Card 4 text" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+    <hr>
+
+    <form action="/admin/contents/testimonials/<%= contents._id %>" method="POST">
+      <h2>Testimonials</h2>
+
+      <div class="row">
+        <div class="col-md-12">
+          <input type="text" class="form-control" value="<%= contents.testimonials.titleTestimonials %>" name="titleTestimonials" id="titleTestimonials"
+            placeholder="Testimonials title" />
+        </div>
+
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/amanda.jpg</span>
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial1.image %>" name="testimonial1.image" id="testimonial1.image" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial1.name %>" name="testimonial1.name" id="testimonial1.name"
+            placeholder="Testimonial 1 name" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial1.info %>" name="testimonial1.info" id="testimonial1.info"
+            placeholder="Testimonial 1 info" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial1.text %>" name="testimonial1.text" id="testimonial1.text"
+            placeholder="Testimonial 1 text" />
+        </div>
+
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/tunde.jpg</span>
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial2.image %>" name="testimonial2.image" id="testimonial2.image" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial2.name %>" name="testimonial2.name" id="testimonial2.name"
+            placeholder="Testimonial 2 name" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial2.info %>" name="testimonial2.info" id="testimonial2.info"
+            placeholder="Testimonial 2 info" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial2.text %>" name="testimonial2.text" id="testimonial2.text"
+            placeholder="Testimonial 2 text" />
+        </div>
+
+        <div class="col-md-4">
+          <span class="d-block default-value">Default Value: /media/maddie.jpg</span>
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial3.image %>" name="testimonial3.image" id="testimonial3.image" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial3.name %>" name="testimonial3.name" id="testimonial3.name"
+            placeholder="Testimonial 3 name" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial3.info %>" name="testimonial3.info" id="testimonial3.info"
+            placeholder="Testimonial 3 info" />
+          <input type="text" class="form-control" value="<%= contents.testimonials.testimonial3.text %>" name="testimonial3.text" id="testimonial3.text"
+            placeholder="Testimonial 3 text" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+    <hr>
+
+    <form action="/admin/contents/contact/<%= contents._id %>" method="POST">
+      <h2>Contact</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <span class="d-block">&nbsp;</span>
+          <input type="text" class="form-control" value="<%= contents.contact.titleContact %>" name="titleContact" id="titleContact" placeholder="Contact title" />
+          <span class="d-block default-value">Default Value: /media/contact.svg</span>
+          <input type="text" class="form-control" value="<%= contents.contact.imageContact %>" name="imageContact" id="imageContact" placeholder="Contact image" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" value="<%= contents.contact.fullname %>" name="fullname" id="fullname" placeholder="Full Name camp name" />
+          <input type="text" class="form-control" value="<%= contents.contact.emailaddress %>" name="emailaddress" id="emailaddress" placeholder="Email Address camp name" />
+          <input type="text" class="form-control" value="<%= contents.contact.labelmessage %>" name="labelmessage" id="labelmessage" placeholder="Message label name" />
+          <input type="text" class="form-control" value="<%= contents.contact.message %>" name="message" id="message" placeholder="Message camp name" />
+          <input type="text" class="form-control" value="<%= contents.contact.buttonvalue %>" name="buttonvalue" id="buttonvalue" placeholder="Button camp name" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+    <hr>
+
+    <form action="/admin/contents/socials/<%= contents._id %>" method="POST">
+      <h2>Socials</h2>
+
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" class="form-control" value="<%= contents.socials.twitter %>" name="twitter" id="twitter" placeholder="Twitter link" />
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" value="<%= contents.socials.facebook %>" name="facebook" id="facebook" placeholder="Facebook link" />
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" value="<%= contents.socials.instagram %>" name="instagram" id="instagram" placeholder="Instagram link" />
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" value="<%= contents.socials.linkedin %>" name="linkedin" id="linkedin" placeholder="Linkedin link" />
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+  </div>
+</body>
+
+</html>

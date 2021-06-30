@@ -1,0 +1,39 @@
+<div class="signup" id="signup">
+  <img class="background" src="/media/shapes/signup-shape.svg" alt="" />
+  <img class="circle" src="/media/shapes/circle.svg" alt="" />
+
+  <div class="signup-fix">
+    <div class="signup-wrap">
+      <div class="container">
+        <h2><%= contents.contact.titleContact %></h2>
+
+        <div class="row">
+          <div class="col-md-6 image-contact-form" data-aos="fade-up" data-aos-duration="1500">
+            <img src="<%= contents.contact.imageContact %>" alt="contact" />
+          </div>
+          <div class="col-md-6">
+            <div class="signup-module" data-aos="fade-down" data-aos-duration="1500">
+              <form id="signup-form" action="/contacts/create" method="POST">
+                <% if (query.success) { %>
+                  <div class="alert alert-info">
+                    <%= query.success %> 
+                  </div>
+
+                  <hr>  
+                <% } %>
+                <input name="fullname" id="fullname" placeholder="<%= contents.contact.fullname %>" class="form-control" required />
+                <input name="email" id="email" placeholder="<%= contents.contact.emailaddress %>" class="form-control" required />
+
+                <label for="message"><%= contents.contact.labelmessage %></label>
+                <span style="display: block; font-size: 12px;">Optional</span>
+                <textarea name="message" id="message" class="form-control" placeholder="<%= contents.contact.message %>"></textarea>
+
+                <input id="contact-submit" type="submit" value="<%= contents.contact.buttonvalue %>" class="btn btn-primary btn-circle" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

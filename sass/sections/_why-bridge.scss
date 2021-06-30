@@ -1,0 +1,83 @@
+.why-bridge {
+  margin-top: 20px;
+  padding: 0 20px;
+  
+  .row {
+    > .col-xl-6 {
+      &:first-of-type {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .why-bridge-wrap {
+    .col-6 {
+      margin-top: 40px;
+    }
+    
+    h2 {
+      font-weight: bold;
+      text-shadow: 0 10px 50px #eef2e5;
+      font-size: 41px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .focus {
+      background-color: #fff;
+      border: 1px solid #C5DEE8;
+      box-shadow: 0 20px 99px #eef2e554;
+      text-align: center;
+      margin-top: 50px;
+      border-radius: 4px;
+      padding: 5px;
+      height: 100%;
+
+      .focus-icon {
+        border: 1px solid $primary-first;
+        display: inline-block;
+        background: #fff;
+        border-radius: 100%;
+        padding: 20px;
+        margin-top: -100px;
+        margin-bottom: 20px;
+
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+      
+      .focus-copy {
+        h3 {
+          font-weight: bold;
+      text-shadow: 0 10px 50px #eef2e5;
+      font-size: 22px;
+        }
+
+        p {
+          font-size: 16px;
+          margin-bottom: 0!important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .why-bridge {
+    margin-top: 100px
+  }
+}
+
+@media (max-width: 767px) {
+  .why-bridge {
+    margin-top: 0
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign In | Bridge Me</title>
+
+  <%- include('../partials/head.ejs') %>
+</head>
+<body>
+  <form action="/admin/users/login" method="POST" class="login-form">
+    <h3>Sign In</h3>
+
+    <% if (query.error) { %>
+      <hr>
+
+      <div class="alert alert-danger">
+        <strong><%= query.error %></strong>
+      </div>
+    <% } %>
+
+    <hr>
+
+    <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
+    <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+
+    <hr>
+
+    <input type="submit" value="Sign In" class="btn btn-primary btn-block w-100 btn-circle">
+  </form>
+</body>
+</html>

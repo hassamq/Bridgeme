@@ -1,0 +1,15 @@
+.btn-primary {
+  background-color: $primary-first;
+  border-color: $primary-first;
+
+  &:hover {
+    background-color: $primary-first-hover;
+    border-color: $primary-first-hover;
+  }
+}
+
+.btn {
+  &.btn-circle {
+    border-radius: 100px;
+  }
+}

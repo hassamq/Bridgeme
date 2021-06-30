@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  transition: all .5s ease
+}
+
+@import 'variables';
+
+// components
+@import 'components/navbar';
+@import 'components/cover';
+@import 'components/footer';
+@import 'components/utils';
+
+// sections
+@import 'sections/features';
+@import 'sections/why-bridge';
+@import 'sections/how-it-work';
+@import 'sections/review';
+@import 'sections/signup';
+
+// banner separetor
+.banner-separetor {
+  width: 100%;
+  position: relative;
+
+  .circle {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 200px;
+    z-index: -2222;
+  }
+  
+  .background {
+    width: 100%;
+  }
+}
+
+// ADMIN CSS
+.login-form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 99px #eef2e554;
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #0002;
+
+  .form-control {
+    background: #F5F5F5;
+    border-radius: 5px;
+    padding: 20px 15px;
+    border: 0;
+    margin-bottom: 20px;
+  }
+
+  label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    margin-top: 15px;
+    font-weight: 600;
+    width: 100%;
+    padding: 15px 15px;
+    box-shadow: 0 6px 30px #36829d44;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="review" id="review">
+  <div class="container">
+    <div class="review-header">
+      <h2><%= contents.testimonials.titleTestimonials %></h2>
+    </div>
+
+    <div class="review-body">
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="2500">
+          <div class="testimonials-images-wrap h-100">
+            <img data-index="0" class="testimonial-image open" src="<%= contents.testimonials.testimonial1.image %>" alt="testimonial" />
+            <img data-index="1" class="testimonial-image close" src="<%= contents.testimonials.testimonial2.image %>" alt="testimonial" />
+            <img data-index="2" class="testimonial-image close" src="<%= contents.testimonials.testimonial3.image %>" alt="testimonial" />
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-down" data-aos-duration="2500">
+          <div class="reviews-list">
+            <div class="move-btns">
+              <input type="hidden" id="index" value="0">
+              <div class="go-back"><img src="/media/icons/back.svg" alt="Go Back" /></div>
+              <div class="go-forward"><img src="/media/icons/forward.svg" alt="Go Forward" /></div>
+            </div>
+
+            <div class="review-single open" data-index="0">
+              <h3 class="name"><%= contents.testimonials.testimonial1.name %></h3>
+              <span class="info"><%= contents.testimonials.testimonial1.info %></span>
+              <p><%= contents.testimonials.testimonial1.text %></p>
+            </div>
+
+            <div class="review-single close" data-index="1">
+              <h3 class="name"><%= contents.testimonials.testimonial2.name %></h3>
+              <span class="info"><%= contents.testimonials.testimonial2.info %></span>
+              <p><%= contents.testimonials.testimonial2.text %></p>
+            </div>
+
+            <div class="review-single close" data-index="2">
+              <h3 class="name"><%= contents.testimonials.testimonial3.name %></h3>
+              <span class="info"><%= contents.testimonials.testimonial3.info %></span>
+              <p><%= contents.testimonials.testimonial3.text %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
