@@ -68,6 +68,13 @@ db.once('open', function () {
   app.get('/', async (req, res) => {
     return res.render('home', { query: req.query, contents: await ContentColl.findOne({ _id: '60d346e1d51e1d0b3a2b96da' }) });
   });
+  app.get('/privacy-policy', async (req, res) => {
+    res.render('privacy', { query: req.query, contents: await ContentColl.findOne({ _id: '60d346e1d51e1d0b3a2b96da' }) });
+  });
+
+  app.get('/terms-condition', async (req, res) => {
+    res.render('terms', { query: req.query, contents: await ContentColl.findOne({ _id: '60d346e1d51e1d0b3a2b96da' }) });
+  });
 
   app.use('/admin/contents', routerContents);
   app.use('/admin/users', routerUsers);
