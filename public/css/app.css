@@ -726,9 +726,9 @@
 	align-items: center
 }
 
-.review .review-body .row .col-md-6 .testimonial-image {
+/* .review .review-body .row .col-md-6 .testimonial-image {
 	transition: all .5s ease
-}
+} */
 
 .review .review-body .row .col-md-6 .testimonial-image.close {
 	max-height: 0;
@@ -775,10 +775,10 @@
 .review .review-body .row .col-md-6 .reviews-list .move-btns img {
 	width: 8px
 }
-
+/* 
 .review .review-body .row .col-md-6 .reviews-list .review-single {
 	transition: all .5s ease
-}
+} */
 
 .review .review-body .row .col-md-6 .reviews-list .review-single.close {
 	max-width: 0;
