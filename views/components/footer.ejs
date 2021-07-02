@@ -7,6 +7,7 @@
         <a href="/" class="navbar-logo">
           <img src="/media/logo.svg" alt="Logo Bridge" />
         </a>
+       
       </div>
       <div class="col-md-9 sections">
         <div class="row">
@@ -22,6 +23,7 @@
             <a href="/privacy-policy">Privacy</a>
             <a href="/terms-condition">Terms and Conditions</a>
           </div>
+          
           <div class="col-md-3 informations">
             <span class="title-section">Contact</span>
             <ul class="bridge-informations">
@@ -30,6 +32,15 @@
                 <p>info@bridgeme.app</p>
               </li>
             </ul>
+            <div class="newsletter">
+              
+              <form class="form-newsletter" action="newsletter" method="POST">
+                <input type="email" class="newsletter-input" name="email" id="email" placeholder="Email"></input>
+                <button class="signup-news">Sign Up</button>
+              
+              </form>
+            <p class="newsletter-subheading">Sign Up for the newsletter</p>
+            </div>
           </div>
           <div class="col-md-3 social">
             <span class="title-section">Social</span>
@@ -38,8 +49,23 @@
               <a class="social-item" href="<%= contents.socials.facebook %>"><img src="/media/icons/facebook.svg" alt="Facebook" /></a>
               <a class="social-item" href="<%= contents.socials.twitter %>"><img src="/media/icons/twitter.svg" alt="Twitter" /></a>
               <a class="social-item" href="<%= contents.socials.linkedin %>"><img src="/media/icons/linkedin.svg" alt="Twitter" /></a>
+              
+              
+            
             </div>
           </div>
+
+          <div>
+            <a  href="https://www.buymeacoffee.com/bridge" target="_blank"><img src="https://wyloapp.com/react/buy_us_a_coffee.svg"  class="coffee" ></a>
+          </div>
+
+          
+  
+            
+          
+         
+
+
         </div>
       </div>
     </div>

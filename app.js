@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const session = require('express-session')
 const moment = require('moment');
+const fetch = require('node-fetch');
 
 const app = express();
 
@@ -75,6 +76,44 @@ db.once('open', function () {
   app.get('/terms-condition', async (req, res) => {
     res.render('terms', { query: req.query, contents: await ContentColl.findOne({ _id: '60d346e1d51e1d0b3a2b96da' }) });
   });
+
+  app.post('/newsletter',(req,res)=>{
+    const email=req.body.email;
+
+     // Construct req data
+  const data = {
+    members: [
+      {
+        email_address: email,
+        status: 'subscribed',
+       
+      }
+    ]
+  };
+
+  const postData = JSON.stringify(data);
+
+  fetch('https://us6.api.mailchimp.com/3.0/lists/4dfd9cca28', {
+    method: 'POST',
+    headers: {
+      Authorization: 'auth 2cb0f9be3b221ee906b5ea1f08122881-us6'
+    },
+    body: postData
+  }).then(res.redirect('/'));
+
+    
+    // const options={
+    //   url:'https://us6.api.mailchimp.com/3.0/lists/4dfd9cca28',
+    //   method:"POST",
+    //   headers: {
+    //     Authorization: 'auth 2cb0f9be3b221ee906b5ea1f08122881-us6'
+    //   },
+    //   body: postData
+    // }
+    
+  });
+
+  
 
   app.use('/admin/contents', routerContents);
   app.use('/admin/users', routerUsers);

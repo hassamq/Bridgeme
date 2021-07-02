@@ -981,6 +981,62 @@
 	box-shadow: 0 6px 30px #36829d44
 }
 
+.coffee{
+	background-color: white;
+	 border: 2px solid white;
+	 width: 200px;
+	  border-radius: 25px;
+	  margin-left: 220px;
+}
+/* newsletter */
+/* .newsletter{
+	margin-left: 450px;
+} */
+.form-newsletter{
+	position:relative;
+	width: 160%;
+	margin-top: 25px;
+	background:white;
+	border-radius:50px;
+	overflow:hidden;
+}
+
+.signup-news {
+	position:absolute;
+	top:0;
+	right:0;
+	text-transform:uppercase;
+	height:100%;
+	padding:15px 15px 5px 15px;
+	border:none;
+	font-weight:700;
+	background:#25c63b;
+	color:#fff;
+	
+	transition: all ease 0.5s;
+	cursor:pointer;
+	font-size:11.7px;
+	width:25%;
+}
+
+.signup-news {
+	background:#34d149;
+}
+
+
+.newsletter-input {
+	padding:14px 2px;
+	width:90%;
+	margin:0 5%;
+	font-size:17px;
+	border-radius:50px;
+	border:none;
+	background:white;
+	outline:none!important;
+}
+.newsletter-subheading{
+	margin-left: 10px;
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -1001,4 +1057,18 @@
         margin-left: 70px;
     }
     
+	.coffee{
+		margin-left: 60px;
+		margin-top: 25px;
+	}
+	.form-newsletter {
+		position: relative;
+		width: 100%;
+		margin-top: 25px;
+		background: white;
+		border-radius: 50px;
+		overflow: hidden;
+	}
 }
+
+
