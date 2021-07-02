@@ -79,6 +79,9 @@ db.once('open', function () {
 
   app.post('/newsletter',(req,res)=>{
     const email=req.body.email;
+    const name=req.body.fullname;
+    console.log(email);
+    console.log(name);
 
      // Construct req data
   const data = {
@@ -86,6 +89,10 @@ db.once('open', function () {
       {
         email_address: email,
         status: 'subscribed',
+        merge_fields: {
+          FNAME: name,
+          
+        }
        
       }
     ]
@@ -93,7 +100,7 @@ db.once('open', function () {
 
   const postData = JSON.stringify(data);
 
-  fetch('https://us6.api.mailchimp.com/3.0/lists/4ee3896a12', {
+  fetch('https://us6.api.mailchimp.com/3.0/lists/fc893344b8', {
     method: 'POST',
     headers: {
       Authorization: 'auth 2cb0f9be3b221ee906b5ea1f08122881-us6'
@@ -102,14 +109,6 @@ db.once('open', function () {
   }).then(res.redirect('/'));
 
     
-    // const options={
-    //   url:'https://us6.api.mailchimp.com/3.0/lists/4dfd9cca28',
-    //   method:"POST",
-    //   headers: {
-    //     Authorization: 'auth 2cb0f9be3b221ee906b5ea1f08122881-us6'
-    //   },
-    //   body: postData
-    // }
     
   });
 

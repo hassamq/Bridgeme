@@ -5,6 +5,7 @@
   <div class="signup-fix">
     <div class="signup-wrap">
       <div class="container">
+        
         <h2><%= contents.contact.titleContact %></h2>
 
         <div class="row">
@@ -13,7 +14,9 @@
           </div>
           <div class="col-md-6">
             <div class="signup-module" data-aos="fade-down" data-aos-duration="1500">
-              <form id="signup-form" action="/contacts/create" method="POST">
+              
+              <!-- action="/contacts/create" -->
+              <form id="signup-form" action="/newsletter"  method="POST"> 
                 <% if (query.success) { %>
                   <div class="alert alert-info">
                     <%= query.success %> 
@@ -30,9 +33,11 @@
 
                 <input id="contact-submit" type="submit" value="<%= contents.contact.buttonvalue %>" class="btn btn-primary btn-circle" />
               </form>
+            
             </div>
           </div>
         </div>
+      <!-- </form> -->
       </div>
     </div>
   </div>
