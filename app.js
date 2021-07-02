@@ -93,7 +93,7 @@ db.once('open', function () {
 
   const postData = JSON.stringify(data);
 
-  fetch('https://us6.api.mailchimp.com/3.0/lists/4dfd9cca28', {
+  fetch('https://us6.api.mailchimp.com/3.0/lists/4ee3896a12', {
     method: 'POST',
     headers: {
       Authorization: 'auth 2cb0f9be3b221ee906b5ea1f08122881-us6'
