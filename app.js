@@ -6,6 +6,7 @@ const logger = require('morgan');
 const session = require('express-session')
 const moment = require('moment');
 const fetch = require('node-fetch');
+const flash = require('connect-flash');
 
 const app = express();
 
@@ -27,6 +28,14 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({ secret: 'Keep it secret', resave: false, saveUninitialized: true, cookie: { secure: false, path: '/'  } }));
+
+//flash message middleware
+// app.use((req, res, next)=>{
+//   res.locals.message = req.session.message
+//   delete req.session.message
+//   next()
+// })
+app.use(flash());
 
 const MONGO_URL = 'mongodb+srv://bridge-admindb:oocaTlZiSD6EZYVm@landing-page-main.bjkzj.mongodb.net/bridge';
 
@@ -80,8 +89,10 @@ db.once('open', function () {
   app.post('/newsletter',(req,res)=>{
     const email=req.body.email;
     const name=req.body.fullname;
+    const msg=req.body.message;
     console.log(email);
     console.log(name);
+    console.log(msg);
 
      // Construct req data
   const data = {
@@ -91,6 +102,7 @@ db.once('open', function () {
         status: 'subscribed',
         merge_fields: {
           FNAME: name,
+          MSG:msg,
           
         }
        
@@ -106,11 +118,17 @@ db.once('open', function () {
       Authorization: 'auth 2cb0f9be3b221ee906b5ea1f08122881-us6'
     },
     body: postData
-  }).then(res.redirect('/'));
+  }).then( 
+    res.redirect('/success')
+ )
 
     
     
   });
+
+  app.get('/success',(req,res)=>{
+    res.render('success-msg');
+  })
 
   
 
